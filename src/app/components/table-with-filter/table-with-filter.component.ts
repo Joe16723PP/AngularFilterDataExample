@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnInit, ViewEncapsulation} from '@angular/core';
 import {CategoryModel} from "../../models/category.model";
 import {MatTableDataSource} from "@angular/material/table";
 import {CategoryService} from "../../services/category.service";
@@ -6,7 +6,8 @@ import {CategoryService} from "../../services/category.service";
 @Component({
   selector: 'app-table-with-filter',
   templateUrl: './table-with-filter.component.html',
-  styleUrls: ['./table-with-filter.component.css']
+  styleUrls: ['./table-with-filter.component.css'],
+  encapsulation: ViewEncapsulation.None
 })
 export class TableWithFilterComponent implements OnInit {
   displayedColumns = ["category"]
@@ -25,7 +26,8 @@ export class TableWithFilterComponent implements OnInit {
 
   onFilterCategory(search: HTMLInputElement) {
     let searchValue = search.value.trim().toLowerCase();
-    // using build-in function
+
+    // using build-in function of angular material
     // this.dataSource.filter = search.value.trim().toLowerCase();
 
     // using normal way

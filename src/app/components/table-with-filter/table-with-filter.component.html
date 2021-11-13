@@ -1,8 +1,14 @@
+
+<!--<mat-form-field>-->
+<!--  <mat-label>search</mat-label>-->
+<!--  <input matInput type="text" placeholder="search..." (keyup)="onFilterCategory(search)" #search>-->
+<!--</mat-form-field>-->
+
+<div class="inputContainer">
+  <input type="text" placeholder="search..." (keyup)="onFilterCategory(search)" #search>
+</div>
+
 <main class="container">
-  <mat-form-field>
-    <mat-label>search</mat-label>
-    <input matInput type="text" placeholder="search..." (keyup)="onFilterCategory(search)" #search>
-  </mat-form-field>
   <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
     <!-- category column -->
     <ng-container matColumnDef="category">
